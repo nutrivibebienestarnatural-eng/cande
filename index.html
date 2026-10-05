@@ -157,6 +157,13 @@ section{padding:88px 0}
 @media(max-width:700px){.tiers{grid-template-columns:1fr 1fr}}
 .occ{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .occ span{font-family:var(--serif);font-size:1.5rem;border:1px solid var(--champ);border-radius:999px;padding:8px 26px;background:var(--card)}
+/* paleta por color elegido */
+.card{--tone:#FFFFFF;--deep:var(--gold);background:color-mix(in srgb,var(--tone) 24%,var(--card));box-shadow:var(--sh),0 0 0 1px color-mix(in srgb,var(--deep) 22%,transparent);transition:background .5s,box-shadow .5s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.card::before{content:"";display:block;height:6px;background:linear-gradient(90deg,var(--tone),var(--deep));transition:background .5s}
+.card .info .k,.card .price{color:var(--deep);transition:color .4s}
+.card .add{background:var(--deep);color:#fff;transition:background .4s,filter .2s}
+.card .add:hover{filter:brightness(.9)}
+.card .tag{color:var(--deep)}
 /* historia */
 .story{background:var(--night);color:#F4ECE0}
 .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -415,10 +422,10 @@ const WHATSAPP = "5490000000000";
 /* NOTA: las fotos en /img son imágenes de REFERENCIA de otra tienda (sccandleco.com.ar).
    Reemplazalas por fotos propias de Cande antes de publicar. */
 const COL = {
-  blanco:{n:"Blanco",h:"#FFFFFF"}, marfil:{n:"Marfil",h:"#F3E9D2"}, celeste:{n:"Celeste",h:"#BBD6EA"},
-  rosa:{n:"Rosa pastel",h:"#F2CBD3"}, beige:{n:"Beige",h:"#D9C3A5"}, salvia:{n:"Verde salvia",h:"#B9C9B0"},
-  dorado:{n:"Dorado",h:"#CDAA62"}, chocolate:{n:"Chocolate",h:"#6B4A3A"}, lila:{n:"Lila",h:"#D3C6E4"},
-  durazno:{n:"Durazno",h:"#F0B99B"}, terracota:{n:"Terracota",h:"#B8613F"}, verde:{n:"Verde seco",h:"#8E9E8B"}, arena:{n:"Arena",h:"#D8C7A8"}
+  blanco:{n:"Blanco",h:"#FFFFFF",d:"#6F5328"}, marfil:{n:"Marfil",h:"#F3E9D2",d:"#8A6A3B"}, celeste:{n:"Celeste",h:"#BBD6EA",d:"#3F6F95"},
+  rosa:{n:"Rosa pastel",h:"#F2CBD3",d:"#A8465E"}, beige:{n:"Beige",h:"#D9C3A5",d:"#7D6544"}, salvia:{n:"Verde salvia",h:"#B9C9B0",d:"#587A55"},
+  dorado:{n:"Dorado",h:"#CDAA62",d:"#8A6A3B"}, chocolate:{n:"Chocolate",h:"#6B4A3A",d:"#5B3D2E"}, lila:{n:"Lila",h:"#D3C6E4",d:"#7A5FA3"},
+  durazno:{n:"Durazno",h:"#F0B99B",d:"#B4603E"}, terracota:{n:"Terracota",h:"#B8613F",d:"#A5502F"}, verde:{n:"Verde seco",h:"#8E9E8B",d:"#4F6B5A"}, arena:{n:"Arena",h:"#D8C7A8",d:"#7D6A45"}
 };
 const CATS = [
   {k:"Velas con figura",s:"Ternura y celebración",img:"img/ref14.webp"},
@@ -498,7 +505,7 @@ function renderFilters(){
 function renderGrid(){
   const list=P.filter(p=>filter==="Todas"||p.cat===filter);
   $("#grid").innerHTML=list.map(p=>`
-  <article class="card">
+  <article class="card" data-pid="${p.id}" style="--tone:${COL[sel[p.id]].h};--deep:${COL[sel[p.id]].d}">
     <div class="thumb" data-pid="${p.id}">${p.tag?`<span class="tag">${p.tag}</span>`:""}
       <div class="track" tabindex="0" aria-label="Fotos de ${p.name}">${slides(p).map((s,i)=>`<img src="${IMG(s)}" alt="${i?"Ambientación de ":"Foto de "}${p.name}">`).join("")}</div>
       ${slides(p).length>1?`<span class="lbl" data-lbl>Producto</span><button class="nv p" data-nv="-1" aria-label="Foto anterior">‹</button><button class="nv n" data-nv="1" aria-label="Foto siguiente">›</button><div class="dots">${slides(p).map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div>`:""}
@@ -549,7 +556,7 @@ $("#grid").addEventListener("click",e=>{
   const nv=e.target.closest("[data-nv]");
   if(nv){const tr=nv.parentElement.querySelector(".track"),n=tr.children.length,i=Math.round(tr.scrollLeft/tr.clientWidth),j=(i+ +nv.dataset.nv+n)%n;tr.scrollTo({left:j*tr.clientWidth,behavior:"smooth"});return}
   const s=e.target.closest("[data-sw]");
-  if(s){sel[+s.dataset.sw]=s.dataset.col;renderGrid();return}
+  if(s){const c=COL[s.dataset.col],card=s.closest(".card");sel[+s.dataset.sw]=s.dataset.col;card.style.setProperty("--tone",c.h);card.style.setProperty("--deep",c.d);card.querySelectorAll("[data-sw]").forEach(b=>b.setAttribute("aria-pressed",b===s));card.querySelector(".cn").textContent=c.n;return}
   const b=e.target.closest(".add");if(!b)return;
   const id=+b.dataset.id,col=sel[id],f=cart.find(i=>i.id===id&&i.col===col);
   f?f.q++:cart.push({id,col,q:1});save();renderCart();toast("Agregado a tu pedido ✓");
