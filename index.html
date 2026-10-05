@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Candelaria — Velas para Bautismo</title>
-<meta name="description" content="Velas de bautismo y bouquets de luz hechos a mano por Cande. Elegí el color, personalizá con el nombre y la fecha, y recibila a tiempo para el gran día.">
+<title>Candelaria — Velas para Celebrar</title>
+<meta name="description" content="Velas, bouquets y regalos hechos a mano por Cande para bautismos, bodas de oro, cumpleaños y empresas. Elegí el color y personalizá tu pedido.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script>
@@ -155,6 +155,8 @@ section{padding:88px 0}
 .tier.alt b{color:var(--champ)}
 .tier a{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:99px;background:var(--champ);color:#2B2622;font-weight:600;font-size:.82rem}
 @media(max-width:700px){.tiers{grid-template-columns:1fr 1fr}}
+.occ{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.occ span{font-family:var(--serif);font-size:1.5rem;border:1px solid var(--champ);border-radius:999px;padding:8px 26px;background:var(--card)}
 /* historia */
 .story{background:var(--night);color:#F4ECE0}
 .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
@@ -237,9 +239,9 @@ footer li a:hover{color:var(--gold)}
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="logo" aria-label="Candelaria, inicio">Candelaria<small>Velas para bautismo</small></a>
+    <a href="#top" class="logo" aria-label="Candelaria, inicio">Candelaria<small>Velas para celebrar</small></a>
     <nav class="links" aria-label="Principal">
-      <a href="#categorias">Colecciones</a><a href="#tienda">Tienda</a><a href="#mayorista">Por cantidad</a><a href="#como">Cómo pedir</a><a href="#historia">Cande</a><a href="#faq">Preguntas</a>
+      <a href="#ocasiones">Ocasiones</a><a href="#categorias">Colecciones</a><a href="#tienda">Tienda</a><a href="#mayorista">Por cantidad</a><a href="#como">Cómo pedir</a><a href="#historia">Cande</a><a href="#faq">Preguntas</a>
     </nav>
     <button class="cartbtn" id="openCart" aria-label="Abrir carrito">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
@@ -252,15 +254,15 @@ footer li a:hover{color:var(--gold)}
 <section class="hero" style="padding:0">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Hechas a mano · Para el día más especial</span>
-      <h1>La luz que acompaña su <em>primer</em> paso.</h1>
-      <p>Velas de bautismo y bouquets de luz hechos a mano por Cande. La misma vela en la gama de colores que combine con tu celebración, personalizada con el nombre y la fecha.</p>
+      <span class="eyebrow">Hechas a mano · Para cada ocasión</span>
+      <h1>Una vela para cada <em>momento</em> que importa.</h1>
+      <p>Velas, bouquets y regalos hechos a mano por Cande. Para bautismos, bodas de oro, cumpleaños, regalos y eventos de empresa. La misma vela en el color que combine con tu celebración.</p>
       <div class="cta"><a class="btn" href="#tienda">Ver la colección</a><a class="btn ghost" href="#como">Cómo pedir</a></div>
     </div>
     <div class="collage">
-      <figure class="a"><img src="img/ref4.webp" alt="Vela de bautismo en tonos pastel" loading="eager"></figure>
+      <figure class="a"><img src="img/ref4.webp" alt="Bouquet de velas en tonos pastel" loading="eager"></figure>
       <figure class="b"><img src="img/ref15.webp" alt="Bouquet de velas"></figure>
-      <figure class="c"><img src="img/ref14.webp" alt="Vela bebé"></figure>
+      <figure class="c"><img src="img/ref14.webp" alt="Vela con figura de bebé"></figure>
       <div class="seal">Hecho<br>a mano<br>con amor</div>
     </div>
   </div>
@@ -268,16 +270,23 @@ footer li a:hover{color:var(--gold)}
 
 <div class="claims"><div class="wrap">
   <div class="claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5" opacity=".6"/></svg><b>Tu vela, en tu color</b><span>La misma vela en blanco, marfil, celeste, rosa, beige y más.</span></div>
-  <div class="claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg><b>Personalizada</b><span>Con el nombre del bebé y la fecha del bautismo.</span></div>
+  <div class="claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg><b>Personalizada</b><span>Con nombre, fecha o dedicatoria para tu ocasión.</span></div>
   <div class="claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4-3-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7-7 10z"/></svg><b>Hecha a mano</b><span>Pequeños lotes, una por una, sin apuros.</span></div>
   <div class="claim"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg><b>Llega a tiempo</b><span>Envíos a todo el país, coordinados con tu fecha.</span></div>
 </div></div>
+
+<section id="ocasiones" style="padding-bottom:20px">
+  <div class="wrap">
+    <div class="head"><span class="eyebrow">Para cada ocasión</span><h2>Una vela para cada celebración</h2></div>
+    <div class="occ"><span>Bautismos</span><span>Bodas de oro</span><span>Cumpleaños</span><span>Regalos</span><span>Empresas y eventos</span><span>Deco del hogar</span></div>
+  </div>
+</section>
 
 <section id="categorias">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Colecciones</span>
-      <h2>Cinco maneras de iluminar el día</h2>
+      <h2>Seis maneras de iluminar tu celebración</h2>
       <div class="rule"><svg viewBox="0 0 14 14" fill="currentColor"><path d="M7 0l1.6 5.4L14 7l-5.4 1.6L7 14 5.4 8.6 0 7l5.4-1.6z"/></svg></div>
     </div>
     <div class="cats" id="cats"></div>
@@ -314,7 +323,7 @@ footer li a:hover{color:var(--gold)}
     <div class="head"><span class="eyebrow">Cómo pedir</span><h2>Simple, como debe ser</h2></div>
     <div class="stepgrid">
       <div class="step"><h3>Elegí</h3><p>Seleccioná el modelo y el color que combine con la ceremonia.</p></div>
-      <div class="step"><h3>Personalizá</h3><p>Contanos el nombre del bebé y la fecha del bautismo.</p></div>
+      <div class="step"><h3>Personalizá</h3><p>Contanos la ocasión, el nombre o la dedicatoria y la fecha.</p></div>
       <div class="step"><h3>Confirmá</h3><p>Cande te escribe por WhatsApp, coordinan pago y fecha de entrega.</p></div>
       <div class="step"><h3>Recibí</h3><p>La enviamos con packaging cuidado, lista para el gran día.</p></div>
     </div>
@@ -326,8 +335,8 @@ footer li a:hover{color:var(--gold)}
     <div>
       <span class="eyebrow">Hola, soy Cande</span>
       <h2>Cada vela guarda un recuerdo.</h2>
-      <p>Empecé haciendo una vela para el bautismo de mi ahijado y no pude parar. Hoy cada pieza de Candelaria sale de mis manos: la diseño, la vierto, la decoro y la empaco pensando en la familia que la va a recibir.</p>
-      <p>Creo que un bautismo merece un detalle que se guarde para siempre, no uno que se olvide en un cajón. Por eso trabajo en pequeños lotes y a pedido.</p>
+      <p>Empecé haciendo una vela para el bautismo de mi ahijado y no pude parar. Hoy hago velas para bautismos, bodas de oro, cumpleaños, regalos y empresas. Cada pieza sale de mis manos: la diseño, la vierto, la decoro y la empaco pensando en quien la va a recibir.</p>
+      <p>Creo que una celebración merece un detalle que se guarde para siempre, no uno que se olvide en un cajón. Por eso trabajo en pequeños lotes y a pedido.</p>
       <div class="sig">— Cande</div>
     </div>
     <div class="pic"><img src="img/ref3.webp" alt="Vela artesanal de Candelaria"></div>
@@ -351,7 +360,8 @@ footer li a:hover{color:var(--gold)}
     <div class="faq">
       <details><summary>¿Con cuánta anticipación tengo que pedir?</summary><p>Recomendamos reservar con 30 días de anticipación. Si tu fecha es más cercana, escribinos y vemos qué se puede hacer.</p></details>
       <details><summary>¿Puedo elegir cualquier color?</summary><p>Sí. Cada modelo se hace en la gama de colores disponible. Si buscás un tono especial para combinar con tu decoración, consultanos.</p></details>
-      <details><summary>¿Se puede personalizar con nombre y fecha?</summary><p>Sí, escribimos el nombre del bebé y la fecha del bautismo. Lo completás al finalizar el pedido.</p></details>
+      <details><summary>¿Se puede personalizar?</summary><p>Sí. Podemos sumar un nombre, una fecha o una dedicatoria, según la ocasión. Lo completás al finalizar el pedido.</p></details>
+      <details><summary>¿Hacen pedidos para empresas y eventos?</summary><p>Sí. Hacemos regalos empresariales, souvenirs para bodas de oro, cumpleaños y eventos, con descuento por cantidad. Escribinos con tu cantidad y la fecha.</p></details>
       <details><summary>¿Hacen souvenirs para invitados?</summary><p>Sí, con descuento por cantidad. Escribinos con tu cantidad y te armamos un presupuesto.</p></details>
       <details><summary>¿Hacen envíos?</summary><p>Enviamos a todo el país. El costo y los tiempos se coordinan según tu zona y tu fecha.</p></details>
     </div>
@@ -371,7 +381,7 @@ footer li a:hover{color:var(--gold)}
 
 <footer>
   <div class="wrap">
-    <div><div class="logo">Candelaria<small>Velas para bautismo</small></div><p style="margin-top:12px;max-width:260px">Velas hechas a mano en Argentina.</p></div>
+    <div><div class="logo">Candelaria<small>Velas para celebrar</small></div><p style="margin-top:12px;max-width:260px">Velas hechas a mano en Argentina.</p></div>
     <div><b style="color:var(--ink)">Tienda</b><ul><li><a href="#categorias">Colecciones</a></li><li><a href="#como">Cómo pedir</a></li><li><a href="#faq">Preguntas</a></li></ul></div>
     <div><b style="color:var(--ink)">Contacto</b><ul><li><a href="#" id="waFoot">WhatsApp</a></li><li><a href="https://instagram.com/candelaria.velas">@candelaria.velas</a></li></ul></div>
   </div>
@@ -387,8 +397,8 @@ footer li a:hover{color:var(--gold)}
   <div class="dh"><h3>Tu pedido</h3><button class="x" id="closeCart" aria-label="Cerrar carrito">×</button></div>
   <div class="items" id="items"></div>
   <div class="df" id="df">
-    <label for="baby">Nombre del bebé</label><input id="baby" placeholder="Ej: Martina" autocomplete="off">
-    <label for="fecha">Fecha del bautismo</label><input id="fecha" placeholder="Ej: 15 de noviembre">
+    <label for="baby">Nombre o dedicatoria</label><input id="baby" placeholder="Ej: Martina, o Bodas de oro de Ana y Juan" autocomplete="off">
+    <label for="fecha">Fecha del evento</label><input id="fecha" placeholder="Ej: 15 de noviembre">
     <p id="dnote" style="font-size:.8rem;color:var(--gold);margin-bottom:10px"></p>
     <div class="tot"><span>Total</span><span id="total">$0</span></div>
     <small>Envío a coordinar. Pagando por transferencia: 10% OFF.</small>
@@ -411,7 +421,7 @@ const COL = {
   durazno:{n:"Durazno",h:"#F0B99B"}, terracota:{n:"Terracota",h:"#B8613F"}, verde:{n:"Verde seco",h:"#8E9E8B"}, arena:{n:"Arena",h:"#D8C7A8"}
 };
 const CATS = [
-  {k:"Velas del bautismo",s:"Ternura para el gran día",img:"img/ref14.webp"},
+  {k:"Velas con figura",s:"Ternura y celebración",img:"img/ref14.webp"},
   {k:"Bouquets de luz",s:"Centros de mesa",img:"img/ref2.webp"},
   {k:"Flores de cera",s:"Pétalos y peonías",img:"img/ref8.webp"},
   {k:"Souvenirs",s:"Para tus invitados",img:"img/ref11.webp"},
@@ -424,11 +434,11 @@ const CATS = [
      img/<slug>-entorno.jpg   → foto ambientada (aparece como 2ª imagen)
    Si no existe el archivo, se usa la imagen de referencia (ref) y se omite el entorno. */
 const P = [
-  {id:1,slug:"bebe-nube",ref:"ref14",cat:"Velas del bautismo",name:"Bebé en la nube",price:48000,cols:["blanco","celeste","rosa","marfil"],ideal:["Bautismo","Baby shower","Nacimiento"],tag:"Más tierna",
+  {id:1,slug:"bebe-nube",ref:"ref14",cat:"Velas con figura",name:"Bebé en la nube",price:48000,cols:["blanco","celeste","rosa","marfil"],ideal:["Bautismo","Baby shower","Nacimiento"],tag:"Más tierna",
    notes:"Un bebé con gorrito que duerme sobre una nube, abrazando a su patito. Una pieza que enamora y se guarda como recuerdo mucho después de apagarla. Perfecta para la mesa de recuerdos o para regalar a los papás."},
-  {id:2,slug:"torta-celebracion",ref:"ref16",cat:"Velas del bautismo",name:"Torta Celebración",price:54000,cols:["marfil","rosa","blanco","celeste"],ideal:["Cumpleaños","Bautismo","Casamiento"],
+  {id:2,slug:"torta-celebracion",ref:"ref16",cat:"Velas con figura",name:"Torta Celebración",price:54000,cols:["marfil","rosa","blanco","celeste"],ideal:["Cumpleaños","Bautismo","Casamiento"],
    notes:"Torta de tres pisos con perlas, corazones y rosas, lista para soplar. Se luce sobre su pie como centro de mesa o como detalle especial en cumpleaños, bautismos y aniversarios."},
-  {id:3,slug:"femme",ref:"ref5",cat:"Velas del bautismo",name:"Femme",price:45000,cols:["rosa","marfil","blanco"],ideal:["Día de la madre","Deco","Cumpleaños"],
+  {id:3,slug:"femme",ref:"ref5",cat:"Velas con figura",name:"Femme",price:45000,cols:["rosa","marfil","blanco"],ideal:["Día de la madre","Deco","Cumpleaños"],
    notes:"Busto de mujer con flores en el cabello, de rasgos serenos y delicados. Una vela que también es objeto de decoración: encendida o apagada, siempre luce. Regalo ideal para mamás y amigas."},
   {id:4,slug:"petit-baby",ref:"ref4",cat:"Bouquets de luz",name:"Petit Baby",price:198000,cols:["rosa","celeste","marfil"],ideal:["Bautismo","Baby shower","Nacimiento"],tag:"Estrella",
    notes:"Caja redonda con rosas, corazones y flores de cera entre gypsophila seca, coronada por un bebé dormido. El centro de mesa más tierno del bautismo, que después se queda como adorno en casa."},
@@ -550,12 +560,12 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")openCart(false)});
 $("#checkout").onclick=()=>{
   const lines=cart.map(i=>{const p=P.find(x=>x.id===i.id);return `• ${i.q} x ${p.name} (${COL[i.col].n}) — ${money(p.price*i.q)}`});
   const baby=$("#baby").value.trim(),fecha=$("#fecha").value.trim();
-  const msg=`¡Hola Cande! Quiero hacer este pedido para un bautismo:\n\n${lines.join("\n")}\n\nCantidad: ${units()} unidades${disc()?` (descuento ${disc()*100}% OFF)`:""}\nTotal: ${money(total())}\nNombre del bebé: ${baby||"(a confirmar)"}\nFecha del bautismo: ${fecha||"(a confirmar)"}\n\n¿Cómo coordinamos pago y envío?`;
+  const msg=`¡Hola Cande! Quiero hacer este pedido para una celebración:\n\n${lines.join("\n")}\n\nCantidad: ${units()} unidades${disc()?` (descuento ${disc()*100}% OFF)`:""}\nTotal: ${money(total())}\nNombre o dedicatoria: ${baby||"(a confirmar)"}\nFecha del evento: ${fecha||"(a confirmar)"}\n\n¿Cómo coordinamos pago y envío?`;
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
 };
 $("#nl").addEventListener("submit",e=>{e.preventDefault();$("#ok").textContent="¡Gracias! Pronto te llega tu código de 10% OFF.";e.target.reset()});
 ["#fab","#waFoot"].forEach(s=>$(s).href=`https://wa.me/${WHATSAPP}`);
-document.querySelectorAll(".wal").forEach(a=>{a.href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("¡Hola Cande! Quiero consultar el precio por más de 20 velas para un bautismo.")}`;a.target="_blank";a.rel="noopener"});
+document.querySelectorAll(".wal").forEach(a=>{a.href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("¡Hola Cande! Quiero consultar el precio por más de 20 velas para un evento.")}`;a.target="_blank";a.rel="noopener"});
 renderFilters();renderGrid();renderCart();
 loadImgs().then(()=>{renderGrid();renderCart()});
 </script>
